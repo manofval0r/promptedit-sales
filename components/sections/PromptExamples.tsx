@@ -22,7 +22,7 @@ export default function PromptExamples() {
   return (
     <section
       ref={containerRef}
-      id="browse"
+      id="examples"
       className="py-24 px-5 md:px-8 lg:px-16 max-w-[1200px] mx-auto relative overflow-visible"
       style={{ perspective: "1000px" }}
     >

@@ -23,6 +23,7 @@ export default function EarningsShowcase() {
   return (
     <section
       ref={containerRef}
+      id="earnings"
       className="w-full py-24 bg-gradient-to-br from-accent-primary/5 via-transparent to-transparent border-y border-border-subtle relative overflow-hidden"
     >
       {/* Parallax Background Ambient Glow */}

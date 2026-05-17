@@ -112,7 +112,7 @@ export default function Navbar() {
 
         {/* Right: Desktop CTA Button & Mobile Menu Toggle */}
         <div className="flex items-center gap-4 z-10">
-          <Link href="#cta" className="hidden sm:inline-flex btn-3d text-sm px-6 py-2.5">
+          <Link href="https://www.contentcreator.com/prompt-edit" className="hidden sm:inline-flex btn-3d text-sm px-6 py-2.5">
             Start Selling →
           </Link>
 
@@ -161,7 +161,7 @@ export default function Navbar() {
               </nav>
               <div className="pt-2 border-t border-border-subtle/50 flex flex-col sm:hidden">
                 <Link
-                  href="#cta"
+                  href="https://www.contentcreator.com/prompt-edit"
                   onClick={() => setMobileMenuOpen(false)}
                   className="w-full btn-3d text-center py-4 text-sm"
                 >

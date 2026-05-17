@@ -107,13 +107,13 @@ export default function Hero() {
             className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mt-2"
           >
             <Link
-              href="#cta"
+              href="https://www.contentcreator.com/prompt-edit"
               className="w-full sm:w-auto btn-3d text-base px-8 py-4 text-center inline-block"
             >
               {HERO.ctaPrimary} →
             </Link>
             <Link
-              href="#browse"
+              href="#examples"
               className="w-full sm:w-auto btn-3d-secondary text-base px-8 py-4 text-center inline-block"
             >
               {HERO.ctaSecondary}

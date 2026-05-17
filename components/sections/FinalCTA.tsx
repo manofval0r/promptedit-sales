@@ -104,7 +104,7 @@ export default function FinalCTA() {
 
             <div className="flex flex-col items-center gap-4 mt-10 w-full sm:w-auto">
               <a
-                href="#apply"
+                href="https://www.contentcreator.com/prompt-edit"
                 className="w-full sm:w-auto btn-3d text-lg px-12 py-5 text-center inline-block"
               >
                 {FINAL_CTA.cta} →
