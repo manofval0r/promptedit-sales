@@ -182,7 +182,7 @@ export default function Hero() {
               {/* Background ambient mesh glow */}
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(124,109,250,0.08),transparent_70%)] pointer-events-none" />
 
-              <AnimatePresence mode="wait">
+              <AnimatePresence>
                 {/* STAGE 1: THE PROMPT IDE (The Creator's Mind) */}
                 {stage === 0 && (
                   <motion.div

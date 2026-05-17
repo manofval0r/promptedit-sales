@@ -27,6 +27,7 @@ export default function HowItWorks() {
       ref={containerRef}
       id="how-it-works"
       className="py-24 px-5 md:px-8 lg:px-16 max-w-[1200px] mx-auto relative overflow-hidden"
+      style={{ position: "relative" }}
     >
       {/* 3D Spatial Zoom Window Frame Background */}
       <motion.div

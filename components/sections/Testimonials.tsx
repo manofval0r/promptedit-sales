@@ -28,6 +28,7 @@ export default function Testimonials() {
     <section
       ref={containerRef}
       className="py-24 px-5 md:px-8 lg:px-16 max-w-[1200px] mx-auto relative overflow-hidden"
+      style={{ position: "relative" }}
     >
       <div className="flex flex-col items-center text-center gap-4 mb-16 relative z-10">
         <ScrollReveal>

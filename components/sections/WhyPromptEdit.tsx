@@ -44,6 +44,7 @@ export default function WhyPromptEdit() {
     <section
       ref={containerRef}
       className="py-24 px-5 md:px-8 lg:px-16 max-w-[1200px] mx-auto relative overflow-hidden"
+      style={{ position: "relative" }}
     >
       {/* Parallax Background Grid Texture */}
       <motion.div

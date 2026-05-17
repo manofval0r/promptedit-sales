@@ -37,7 +37,7 @@ export default function FinalCTA() {
       ref={containerRef}
       id="cta"
       className="w-full px-5 md:px-8 lg:px-16 py-20 relative z-10 overflow-visible"
-      style={{ perspective: "1000px" }}
+      style={{ perspective: "1000px", position: "relative" }}
     >
       <div className="max-w-[1200px] mx-auto w-full relative flex flex-col items-center justify-center min-h-[550px]">
         {/* Card 1: Back Layer */}

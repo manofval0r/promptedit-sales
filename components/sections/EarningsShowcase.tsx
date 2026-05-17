@@ -25,6 +25,7 @@ export default function EarningsShowcase() {
       ref={containerRef}
       id="earnings"
       className="w-full py-24 bg-gradient-to-br from-accent-primary/5 via-transparent to-transparent border-y border-border-subtle relative overflow-hidden"
+      style={{ position: "relative" }}
     >
       {/* Parallax Background Ambient Glow */}
       <motion.div

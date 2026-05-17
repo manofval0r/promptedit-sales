@@ -24,7 +24,7 @@ export default function PromptExamples() {
       ref={containerRef}
       id="examples"
       className="py-24 px-5 md:px-8 lg:px-16 max-w-[1200px] mx-auto relative overflow-visible"
-      style={{ perspective: "1000px" }}
+      style={{ perspective: "1000px", position: "relative" }}
     >
       <div className="flex flex-col items-center text-center gap-4 mb-16 relative z-10">
         <ScrollReveal>

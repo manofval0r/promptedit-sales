@@ -66,6 +66,7 @@ export default function FAQ() {
       ref={containerRef}
       id="faq"
       className="py-24 px-5 md:px-8 lg:px-16 max-w-[1200px] mx-auto relative border-t border-border-subtle overflow-hidden"
+      style={{ position: "relative" }}
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start relative z-10">
         {/* Left Column: Context & Information with Parallax Glide */}
@@ -114,7 +115,7 @@ export default function FAQ() {
 
           {/* Accordion List */}
           <div className="flex flex-col gap-4">
-            <AnimatePresence mode="wait">
+            <AnimatePresence>
               {filteredFaqs.map((faq, idx) => {
                 const isOpen = openIndex === idx;
                 const id = `faq-${idx}`;
