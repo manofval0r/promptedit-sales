@@ -149,7 +149,7 @@ export default function Hero() {
         </div>
 
         {/* Right Column: Creation to Monetization Thick Line Animation directly on background */}
-        <div className="lg:col-span-6 flex flex-col items-center justify-center w-full">
+        <div className="lg:col-span-6 hidden lg:flex flex-col items-center justify-center w-full">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
