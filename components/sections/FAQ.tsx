@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, useRef } from "react";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { FAQS } from "@/lib/data";
 import SectionLabel from "@/components/ui/SectionLabel";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -19,6 +19,17 @@ import {
 export default function FAQ() {
   const [activeCategory, setActiveCategory] = useState<string>("All");
   const [openIndex, setOpenIndex] = useState<number | null>(0); // first item open by default
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["0 1", "1 1"],
+  });
+
+  // 3D Spatial Zoom & Sticky Context Parallax Transformations
+  const leftColY = useTransform(scrollYProgress, [0, 1], [40, 0]);
+  const rightColScale = useTransform(scrollYProgress, [0, 1], [0.95, 1]);
+  const rightColY = useTransform(scrollYProgress, [0, 1], [80, 0]);
 
   const categories = ["All", "General", "Pricing", "Process", "Support"];
 
@@ -52,18 +63,19 @@ export default function FAQ() {
 
   return (
     <section
+      ref={containerRef}
       id="faq"
-      className="py-24 px-5 md:px-8 lg:px-16 max-w-[1200px] mx-auto relative border-t border-border-subtle"
+      className="py-24 px-5 md:px-8 lg:px-16 max-w-[1200px] mx-auto relative border-t border-border-subtle overflow-hidden"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-        {/* Left Column: Context & Information */}
-        <div className="lg:col-span-5 flex flex-col gap-6 lg:sticky lg:top-32">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start relative z-10">
+        {/* Left Column: Context & Information with Parallax Glide */}
+        <motion.div style={{ y: leftColY }} className="lg:col-span-5 flex flex-col gap-6 lg:sticky lg:top-32">
           <ScrollReveal>
             <SectionLabel>FAQ</SectionLabel>
           </ScrollReveal>
           <ScrollReveal delay={100}>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-text-primary leading-[1.1]">
-              Got Questions? We've Got Answers.
+              Got Questions? We&apos;ve Got Answers.
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={200}>
@@ -71,10 +83,13 @@ export default function FAQ() {
               We believe in complete transparency and creator-first monetization. Browse through our FAQs to find answers about our 80% revenue share, instant Stripe payouts, prompt licensing, and marketplace mechanics. Need further assistance? Our creator support team is always here to help.
             </p>
           </ScrollReveal>
-        </div>
+        </motion.div>
 
-        {/* Right Column: Category Tabs & Accordion List */}
-        <div className="lg:col-span-7 flex flex-col gap-8">
+        {/* Right Column: Category Tabs & Accordion List with 3D Spatial Zoom */}
+        <motion.div
+          style={{ scale: rightColScale, y: rightColY }}
+          className="lg:col-span-7 flex flex-col gap-8"
+        >
           {/* Category Tabs */}
           <ScrollReveal delay={200}>
             <div className="flex flex-wrap items-center gap-3 border-b border-border-subtle pb-6">
@@ -164,7 +179,7 @@ export default function FAQ() {
               })}
             </AnimatePresence>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

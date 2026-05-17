@@ -86,25 +86,26 @@ export default function Navbar() {
           {navLinks.map((link) => {
             const isActive = activeSection === link.name;
             return (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={() => setActiveSection(link.name)}
-                className={`relative px-5 py-2.5 rounded-full text-sm font-display tracking-wider uppercase transition-colors duration-300 ${
-                  isActive
-                    ? "text-white font-bold"
-                    : "text-text-secondary hover:text-text-primary font-medium"
-                }`}
-              >
+              <div key={link.name} className="relative">
                 {isActive && (
                   <motion.div
                     layoutId="activeNavPill"
-                    className="absolute inset-0 rounded-full bg-accent-primary/20 border border-accent-primary/40 -z-10 shadow-[0_0_15px_rgba(124,109,250,0.3)]"
+                    className="absolute inset-0 rounded-full bg-accent-primary/20 border border-accent-primary/40 z-0 shadow-[0_0_15px_rgba(124,109,250,0.3)]"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
-                {link.name}
-              </Link>
+                <Link
+                  href={link.href}
+                  onClick={() => setActiveSection(link.name)}
+                  className={`relative block px-5 py-2.5 rounded-full text-sm font-display tracking-wider uppercase transition-colors duration-300 z-10 ${
+                    isActive
+                      ? "text-white font-bold"
+                      : "text-text-secondary hover:text-text-primary font-medium"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              </div>
             );
           })}
         </nav>
