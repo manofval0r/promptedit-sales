@@ -196,33 +196,39 @@ export const TESTIMONIALS = [
 
 export const FAQS = [
   {
+    category: "Pricing",
+    icon: "DollarSign",
     question: "How much does it cost to list a prompt?",
-    answer:
-      "Nothing. Listing is free. PromptEdit takes 20% when a sale happens.",
+    answer: "Nothing. Listing is free. PromptEdit takes 20% when a sale happens.",
   },
   {
+    category: "General",
+    icon: "HelpCircle",
     question: "What types of prompts can I sell?",
-    answer:
-      "Any prompt for an AI video tool — Sora, Runway, Kling, Pika, Luma, Higgsfield, and more. Text prompts, image prompts, style references, camera movement scripts.",
+    answer: "Any prompt for an AI video tool — Sora, Runway, Kling, Pika, Luma, Higgsfield, and more. Text prompts, image prompts, style references, camera movement scripts.",
   },
   {
+    category: "Process",
+    icon: "RefreshCw",
     question: "How do I get paid?",
-    answer:
-      "Payouts are processed weekly via Stripe. Minimum payout threshold is $10.",
+    answer: "Payouts are processed weekly via Stripe. Minimum payout threshold is $10.",
   },
   {
+    category: "Pricing",
+    icon: "Sliders",
     question: "Can I set my own prices?",
-    answer:
-      "Yes. You set the price per prompt. Most successful prompts are priced between $9 and $49.",
+    answer: "Yes. You set the price per prompt. Most successful prompts are priced between $9 and $49.",
   },
   {
+    category: "Support",
+    icon: "BarChart",
     question: "What if my prompt stops selling?",
-    answer:
-      "You can edit, reprice, or unpublish any listing at any time. Your dashboard shows performance per prompt.",
+    answer: "You can edit, reprice, or unpublish any listing at any time. Your dashboard shows performance per prompt.",
   },
   {
+    category: "General",
+    icon: "Lock",
     question: "Do I keep ownership of my prompts?",
-    answer:
-      "Yes. You retain full IP. You're licensing usage, not transferring ownership.",
+    answer: "Yes. You retain full IP. You're licensing usage, not transferring ownership.",
   },
 ];

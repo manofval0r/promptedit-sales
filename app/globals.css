@@ -1,20 +1,33 @@
 @import "tailwindcss";
 
+* {
+  scroll-behavior: smooth;
+}
+
 :root {
   /* Backgrounds */
-  --bg-base: #060612;         /* deep navy-black — page background */
-  --bg-surface: #0d0d1f;      /* cards, sections */
-  --bg-elevated: #12122a;     /* hover states, active cards */
+  --bg-base: #060612;
+  /* deep navy-black — page background */
+  --bg-surface: #0d0d1f;
+  /* cards, sections */
+  --bg-elevated: #12122a;
+  /* hover states, active cards */
 
   /* Accent */
-  --accent-primary: #7c6dfa;  /* violet — primary CTA, highlights */
-  --accent-glow: rgba(124, 109, 250, 0.12); /* glow fill behind accents */
-  --accent-secondary: #a78bfa; /* lighter violet for text accents */
+  --accent-primary: #7c6dfa;
+  /* violet — primary CTA, highlights */
+  --accent-glow: rgba(124, 109, 250, 0.12);
+  /* glow fill behind accents */
+  --accent-secondary: #a78bfa;
+  /* lighter violet for text accents */
 
   /* Text */
-  --text-primary: #f0eeff;    /* near-white with violet tint */
-  --text-secondary: #8b8aad;  /* muted body */
-  --text-tertiary: #4a4870;   /* metadata, labels */
+  --text-primary: #f0eeff;
+  /* near-white with violet tint */
+  --text-secondary: #8b8aad;
+  /* muted body */
+  --text-tertiary: #4a4870;
+  /* metadata, labels */
 
   /* Borders */
   --border-subtle: rgba(124, 109, 250, 0.08);
@@ -25,17 +38,28 @@
   --earnings-gold: #fbbf24;
 
   /* Typography scale */
-  --text-xs:   0.75rem;   /* 12px — metadata, labels */
-  --text-sm:   0.875rem;  /* 14px — secondary body */
-  --text-base: 1rem;      /* 16px — body */
-  --text-lg:   1.125rem;  /* 18px — lead text */
-  --text-xl:   1.25rem;   /* 20px */
-  --text-2xl:  1.5rem;    /* 24px */
-  --text-3xl:  1.875rem;  /* 30px */
-  --text-4xl:  2.25rem;   /* 36px */
-  --text-5xl:  3rem;      /* 48px */
-  --text-6xl:  3.75rem;   /* 60px — section heroes */
-  --text-7xl:  4.5rem;    /* 72px — page hero (desktop) */
+  --text-xs: 0.75rem;
+  /* 12px — metadata, labels */
+  --text-sm: 0.875rem;
+  /* 14px — secondary body */
+  --text-base: 1rem;
+  /* 16px — body */
+  --text-lg: 1.125rem;
+  /* 18px — lead text */
+  --text-xl: 1.25rem;
+  /* 20px */
+  --text-2xl: 1.5rem;
+  /* 24px */
+  --text-3xl: 1.875rem;
+  /* 30px */
+  --text-4xl: 2.25rem;
+  /* 36px */
+  --text-5xl: 3rem;
+  /* 48px */
+  --text-6xl: 3.75rem;
+  /* 60px — section heroes */
+  --text-7xl: 4.5rem;
+  /* 72px — page hero (desktop) */
 
   /* Motion Tokens */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -90,8 +114,13 @@ body {
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-marquee {
@@ -99,10 +128,114 @@ body {
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 15px rgba(124, 109, 250, 0.4); }
-  50% { box-shadow: 0 0 30px rgba(124, 109, 250, 0.8); }
+
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(124, 109, 250, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(124, 109, 250, 0.8);
+  }
 }
 
 .animate-pulse-glow {
   animation: pulse-glow 2s infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+  border-left: 1px solid var(--border-subtle);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-elevated);
+  border-radius: 6px;
+  border: 3px solid var(--bg-base);
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
+/* 3D Pill Button styling with depth */
+.btn-3d {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  user-select: none;
+  background: linear-gradient(145deg, #7c6dfa, #5a4ad2);
+  box-shadow:
+    0 6px 0 #3b2d91,
+    0 12px 25px rgba(124, 109, 250, 0.4),
+    inset 0 2px 1px rgba(255, 255, 255, 0.4),
+    inset 0 -2px 1px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+  color: #ffffff;
+}
+
+.btn-3d:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 0 #3b2d91,
+    0 16px 30px rgba(124, 109, 250, 0.6),
+    inset 0 2px 1px rgba(255, 255, 255, 0.5),
+    inset 0 -2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.btn-3d:active {
+  transform: translateY(4px);
+  box-shadow:
+    0 2px 0 #3b2d91,
+    0 4px 10px rgba(124, 109, 250, 0.3),
+    inset 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Secondary 3D Button (Ghost/Bordered style with depth) */
+.btn-3d-secondary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  user-select: none;
+  background: linear-gradient(145deg, #1a1a32, #0d0d1f);
+  border: 1px solid #4a4870;
+  box-shadow:
+    0 6px 0 #060612,
+    0 10px 20px rgba(0, 0, 0, 0.5),
+    inset 0 2px 1px rgba(255, 255, 255, 0.1);
+  transform: translateY(0);
+  color: var(--text-primary);
+}
+
+.btn-3d-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 0 #060612,
+    0 14px 25px rgba(124, 109, 250, 0.2),
+    inset 0 2px 1px rgba(255, 255, 255, 0.15);
+  border-color: #7c6dfa;
+}
+
+.btn-3d-secondary:active {
+  transform: translateY(4px);
+  box-shadow:
+    0 2px 0 #060612,
+    0 4px 10px rgba(0, 0, 0, 0.4),
+    inset 0 2px 3px rgba(0, 0, 0, 0.4);
 }
